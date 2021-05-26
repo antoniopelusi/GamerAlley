@@ -1,6 +1,10 @@
 # gamerAlley :video_game:
 A videogames-based social network
 
+
+![](https://img.shields.io/badge/HTML-red) ![](https://img.shields.io/badge/Python-blue) ![](https://img.shields.io/badge/Javascript-yellow) ![](https://img.shields.io/badge/CSS-purple)
+
+
 ### Features:
 - **Profile**
     - Create account
