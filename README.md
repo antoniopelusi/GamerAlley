@@ -6,7 +6,7 @@ A videogames-based social network
 
 ![](https://img.shields.io/badge/Open_Source-GPL--3.0-darkgreen)
 
-
+---
 ### Features:
 - **Profile**
     - Create account
@@ -33,7 +33,7 @@ A videogames-based social network
     - Send friend request
     - Accept friend request
     - Remove friend
-    
+---
 ### Installation
 - Clone this repository with git clone `https://github.com/antoniopelusi/GamerAlley.git`
 - Move to the `/src/GamerAlley` directory inside the project
@@ -41,6 +41,7 @@ A videogames-based social network
 - Set up the database with `python manage.py migrate` (_there is already a database with some profile, posts, comments and relationships to test the website_)
 - Run the server with `python manage.py runserver`
 
+---
 ### Additional info
 - Back-end framework: `Django`
 - Front-end framework: `Semantic UI`
