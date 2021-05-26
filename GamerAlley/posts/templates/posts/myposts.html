@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    profile feed
+{% endblock title %}
+
+{% block content %}
+    <div class="ui grid">
+        <br>
+        <div class="row">
+            <div class="five wide column">
+                <br>
+                <img class="ui medium circular image" src={{ profile.avatar.url }}>
+                <h1>{{ profile.user }}</h1>
+                <div class="ui vertical fluid darkest menu">
+                    <div style="color: whitesmoke" class="item">
+                        Posts
+                        <div class="ui label darker">{{ profile.get_posts_no }}</div>
+                    </div>
+                    <div style="color: whitesmoke" class="item">
+                        Upvotes given
+                        <div class="ui label darker">{{ profile.get_upvotes_given_no }}</div>
+                    </div>
+                    <div style="color: whitesmoke" class="item">
+                        Upvotes received
+                        <div class="ui label darker">{{ profile.get_upvotes_received_no }}</div>
+                    </div>
+                    <div style="color: whitesmoke" class="item">
+                        Friends
+                        <div class="ui label darker">{{ profile.get_friends_no }}</div>
+                    </div>
+                </div>
+                <div style="padding-top: 10px">
+                    <h4>Go back to profile:</h4>
+                    <a href="{% url 'profiles:my-profile-view' %}">
+                        <button style="border: 1px solid #9957f6;" class="ui right labeled icon darkest button"
+                                id="modal-btn">Profile
+                            <i class="level up alternate icon"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="eleven wide column">
+                <div style="padding-bottom: 1px"></div>
+                {% for obj in qs %}
+                    {% if obj.author.slug == profile.slug %}
+                        <div class="ui fluid card darkest post">
+                            <div class="content">
+                                <div class="right floated meta">
+                                    <div class="ui grid">
+                                        <div class="row">
+                                            {% ifequal request.user obj.author.user %}
+                                                <a href="{% url 'posts:post-update' obj.pk %}">
+                                                    <button id="edit-btn" class="ui icon button darker">
+                                                        <i class="edit icon"></i>
+                                                    </button>
+                                                </a>
+                                                <a href="{% url 'posts:post-delete' obj.pk %}">
+                                                    <button id="edit-btn" class="ui icon button darker">
+                                                        <i class="close icon"></i>
+                                                    </button>
+                                                </a>
+                                            {% endifequal %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <img class="ui avatar image" src={{ obj.author.avatar.url }}>&nbsp;
+                                <span style="color: #ffc800">@</span>{{ obj.author.user }} - {{ obj.created|timesince }}
+                                ago
+                            </div>
+                            <div class="ui fluid image">
+                                {% if obj.image %}
+                                    <img src={{ obj.image.url }}>
+                                {% endif %}
+                            </div>
+                            <div class="content">
+                                <a href="{% url 'posts:tag-post-view' obj.tags %}">
+                                    <button class="ui right floated button darkest">
+                                        <span style="color: #9957f6">#</span>
+                                        <span style="color: #d4d3d3">{{ obj.tags }}</span>
+                                    </button>
+                                </a>
+                                <p> {{ obj.content }} </p>
+                                <br>
+                                <div>
+                                    <i style="color: #ffc800" class="chevron up icon"></i>
+                                    <span class="ui darkest upvote-count{{ obj.id }}"> {{ obj.num_upvote }}</span>&nbsp;
+                                    upvotes
+                                </div>
+                                <div>
+                                    <i style="color: #9957f6" class="comment icon"></i>
+                                    <span> {{ obj.num_comments }}&nbsp; comments</span>
+                                </div>
+                            </div>
+                            <div class="extra content">
+                                <div class="mb-5"></div>
+                                <div class="right floated">
+                                    <form action="{% url 'posts:upvote-post-view' %}" method="POST" class="upvote-form"
+                                          id="{{ obj.id }}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="post_id" value={{ obj.id }}>
+                                        <button type="submit" class="ui icon button dark upvote-btn{{ obj.id }}">
+                                            {% if profile not in obj.upvoted.all %}
+                                                Upvote
+                                            {% else %}
+                                                Downvote
+                                            {% endif %}
+                                        </button>
+                                    </form>
+                                </div>
+                                <button class="cmt_btn ui button darker mb-5">show / hide comments</button>
+                                <div class="comment-box">
+                                    {% if obj.comment_set.all %}
+                                        {% for c in obj.comment_set.all %}
+                                            <div class="ui segment mb-5 darker">
+                                                <img class="ui avatar image" src={{ c.user.avatar.url }}>
+                                                <span>{{ c.user }}</span>
+                                                <div class='mt-5'>{{ c.body }}</div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+
+                                <form action="" method="POST" class='ui fluid form'>
+                                    {% csrf_token %}
+                                    <input type="hidden" name="post_id" value={{ obj.id }}>
+                                    {{ c_form }}
+                                    <button type="submit" name="submit_c_form"
+                                            class="ui primary button mt-5 w-full dark">
+                                        Send
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

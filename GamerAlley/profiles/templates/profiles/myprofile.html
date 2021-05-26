@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    my profile
+{% endblock title %}
+
+{% block content %}
+
+    <!-- MODAL -->
+    <div class="ui modal mymodal">
+        <i class="close icon darker"></i>
+        <div style="border-bottom: 1px solid #ffc800" class="header darker">
+            Update your profile
+        </div>
+        <div class="image content dark">
+            <div class="ui medium circular image">
+                <img src="{{ profile.avatar.url }}">
+            </div>
+            <div class="description">
+                <div class="ui header dark">Provide some additional info about you!</div>
+                <form action="" method="POST" class="ui form dark" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+            </div>
+        </div>
+        <div class="actions darker">
+            <button type="submit" class="ui positive right labeled icon button">
+                Update
+                <i class="checkmark icon"></i>
+            </button>
+            </form>
+        </div>
+    </div>
+    <div class="ui segment darkest">
+        {% if confirm %}
+            <div class="ui green message">Your profile has been updated</div>
+        {% endif %}
+        <h3>my profile: <span style="color: #ffc800">{{ request.user }}</span></h3>
+        <div class="ui grid">
+            <div class="row">
+                <div id="profile-panel" class="six wide column darkest">
+                    <img class="ui medium circular image" src={{ profile.avatar.url }}>
+                    <div class="row mt-5">
+                        <br><br>
+                        <button class="ui secondary button" id="modal-btn">Update profile</button>
+                        <h4 style="padding-top: 10px">Show profile feed</h4>
+                        <a href="{% url 'posts:user-post-view' %}">
+                            <button style="border: 1px solid #9957f6;" class="ui right labeled icon darkest button"
+                                    id="modal-btn">Feed
+                                <i class="level down alternate icon"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="ten wide column">
+                    <table class="ui table dark">
+                        <tbody>
+                        <tr>
+                            <td>Username</td>
+                            <td>{{ profile.user }}</td>
+                        </tr>
+                        <tr>
+                            <td>First name</td>
+                            <td>{{ profile.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Last name</td>
+                            <td>{{ profile.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <td>Bio</td>
+                            <td>{{ profile.bio }}</td>
+                        </tr>
+                        <tr>
+                            <td>Number of friends</td>
+                            <td>{{ profile.get_friends_no }}</td>
+                        </tr>
+                        <tr>
+                            <td>Number of posts</td>
+                            <td>{{ profile.get_posts_no }}</td>
+                        </tr>
+                        <tr>
+                            <td>Number of upvotes given</td>
+                            <td>{{ profile.get_upvotes_given_no }}</td>
+                        </tr>
+                        <tr>
+                            <td>Number of upvotes received</td>
+                            <td>{{ profile.get_upvotes_received_no }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

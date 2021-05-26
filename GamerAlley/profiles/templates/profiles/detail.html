@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    profile detail
+{% endblock title %}
+
+{% block content %}
+    <div class="ui grid">
+        <br>
+        <div class="row">
+            <div class="five wide column">
+                <br>
+                <img class="ui medium circular image" src={{ profile.avatar.url }}>
+                <h1>{{ object.user }}</h1>
+                <div class="ui vertical fluid darkest menu">
+                    <div style="color: whitesmoke" class="item">
+                        Posts
+                        <div class="ui label darker">{{ object.get_posts_no }}</div>
+                    </div>
+                    <div style="color: whitesmoke" class="item">
+                        Upvotes given
+                        <div class="ui label darker">{{ object.get_upvotes_given_no }}</div>
+                    </div>
+                    <div style="color: whitesmoke" class="item">
+                        Upvotes received
+                        <div class="ui label darker">{{ object.get_upvotes_received_no }}</div>
+                    </div>
+                    <div style="color: whitesmoke" class="item">
+                        Friends
+                        <div class="ui label darker">{{ object.get_friends_no }}</div>
+                    </div>
+                </div>
+                <br>
+                <a href="{% url 'profiles:all-profiles-view' %}">
+                    <button style="border: 1px solid #9957f6;" class="ui right labeled icon darkest button"
+                            id="modal-btn">Show all profiles
+                        <i class="external alternates icon"></i>
+                    </button>
+                </a>
+            </div>
+            <div class="eleven wide column">
+                <br>
+                {% if len_posts %}
+                    {% for post in posts %}
+                        <div class="segment ui fluid darkest">
+                            {{ post.content }}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <h2 style="padding-top: 20px">No posts from this user...&nbsp&nbsp&nbsp
+                        <i style="color: #ffc800" class="address card icon"></i>
+                    </h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}
