@@ -4,7 +4,7 @@ A videogames-based social network
 
 ![](https://img.shields.io/badge/HTML-red) ![](https://img.shields.io/badge/Python-blue) ![](https://img.shields.io/badge/Javascript-yellow) ![](https://img.shields.io/badge/CSS-purple)
 
-![](https://img.shields.io/badge/Open_Source-GPL--3.0-informational)
+![](https://img.shields.io/badge/Open_Source-GPL--3.0-darkgreen)
 
 
 ### Features:
