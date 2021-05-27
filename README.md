@@ -7,7 +7,7 @@ A videogames-based social network
 ![](https://img.shields.io/badge/Open_Source-GPL--3.0-darkgreen)
 
 ---
-### Full documentation about functionality and screenshots available on the file `Gameralley.pdf` in this repository
+#### Full documentation about functionality and screenshots available on the file `Gameralley.pdf` in this repository
 
 ---
 ### Features:
