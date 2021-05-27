@@ -56,7 +56,7 @@ A videogames-based social network
 ### Login in the website (_Preloaded accounts on the database, only for testing purposes_):
 _email_ | _password_ to login in GamerAlley
 
-**Admin account:** (_can enter in the Django `admin/` page_)
+**Admin account:** (_can enter in the Django_ `admin/` _page_)
 - antoniopelusi@email.com | **passwordantonio**
 
 
