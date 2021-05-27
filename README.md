@@ -38,7 +38,8 @@ A videogames-based social network
 - Clone this repository with `git clone https://github.com/antoniopelusi/GamerAlley.git`
 - Move to the `GamerAlley/GamerAlley` directory inside the project
 - Create the virtual environment and install all the libraries with `pipenv install django pillow django-allauth`
-- Set up the database with `python manage.py migrate` (_there is already a database with some profile, posts, comments and relationships to test the website_)
+- To activate this project's virtualenv run `pipenv shell`
+- Set up the database with `python manage.py makemigrations` and `python manage.py migrate` (_there is already a database with some profile, posts, comments and relationships to test the website_)
 - Run the server with `python manage.py runserver`
 
 ---
