@@ -33,6 +33,7 @@ A videogames-based social network
     - Send friend request
     - Accept friend request
     - Remove friend
+
 ---
 ### Installation
 - Clone this repository with `git clone https://github.com/antoniopelusi/GamerAlley.git`
@@ -41,6 +42,14 @@ A videogames-based social network
 - To activate this project's virtualenv run `pipenv shell`
 - Set up the database with `python manage.py makemigrations` and `python manage.py migrate` (_there is already a database with some profile, posts, comments and relationships to test the website_)
 - Run the server with `python manage.py runserver`
+
+---
+### login in the website (_Preloaded accounts on the database, only for testing purposes_):
+**Admin account:** (_can enter in the Django `admin/` page_)
+- antoniopelusi@email.com
+**User accounts:**
+_email_ and _password_ to login in GamerAlley
+- 
 
 ---
 ### Additional info
