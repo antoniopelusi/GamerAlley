@@ -7,6 +7,9 @@ A videogames-based social network
 ![](https://img.shields.io/badge/Open_Source-GPL--3.0-darkgreen)
 
 ---
+##### Full documentation about functionality available on the file `Gameralley.pdf` in this repository
+
+---
 ### Features:
 - **Profile**
     - Create account
@@ -35,6 +38,12 @@ A videogames-based social network
     - Remove friend
 
 ---
+### Additional info
+- Back-end framework: `Django`
+- Front-end framework: `Semantic UI`
+- Used libraries: `django-allauth`, `pillow`
+
+---
 ### Installation
 - Clone this repository with `git clone https://github.com/antoniopelusi/GamerAlley.git`
 - Move to the `GamerAlley/GamerAlley` directory inside the project
@@ -45,14 +54,15 @@ A videogames-based social network
 
 ---
 ### login in the website (_Preloaded accounts on the database, only for testing purposes_):
-**Admin account:** (_can enter in the Django `admin/` page_)
-- antoniopelusi@email.com
-**User accounts:**
-_email_ and _password_ to login in GamerAlley
-- 
+_email_ | _password_ to login in GamerAlley
 
----
-### Additional info
-- Back-end framework: `Django`
-- Front-end framework: `Semantic UI`
-- Used libraries: `django-allauth`, `pillow`
+**Admin account:** (_can enter in the Django `admin/` page_)
+- antoniopelusi@email.com | **passwordantonio**
+
+
+**User accounts:** (_only for GamerAlley login_)
+- marcobianchi@email.com | **passwordmarco**
+- annabianchi@email.com | **passwordanna**
+- valentinorossi@email.com | **passwordvale**
+- giorgiobruni@email.com | **passwordgiorgio**
+- michelagialli@email.com | **passwordmichela**
