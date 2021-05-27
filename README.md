@@ -53,7 +53,7 @@ A videogames-based social network
 - Run the server with `python manage.py runserver`
 
 ---
-### login in the website (_Preloaded accounts on the database, only for testing purposes_):
+### Login in the website (_Preloaded accounts on the database, only for testing purposes_):
 _email_ | _password_ to login in GamerAlley
 
 **Admin account:** (_can enter in the Django `admin/` page_)
