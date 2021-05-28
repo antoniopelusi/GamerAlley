@@ -7,7 +7,7 @@ A videogames-based social network
 ![](https://img.shields.io/badge/Open_Source-GPL--3.0-darkgreen)
 
 ---
-#### Full documentation about functionality and screenshots available on the file `Gameralley.pdf` in this repository
+#### Full documentation about functionality and screenshots available on the file [`Gameralley.pdf`](https://github.com/antoniopelusi/GamerAlley/blob/master/GamerAlley.pdfhttps://github.com/antoniopelusi/GamerAlley/blob/master/GamerAlley.pdf) in this repository
 
 ---
 ### Features:
@@ -39,9 +39,9 @@ A videogames-based social network
 
 ---
 ### Additional info
-- Back-end framework: `Django`
-- Front-end framework: `Semantic UI`
-- Used libraries: `django-allauth`, `pillow`
+- Back-end framework: [`Django`](https://www.djangoproject.com/)
+- Front-end framework: [`Semantic UI`](https://semantic-ui.com)
+- Used libraries: [`django-allauth`](https://github.com/pennersr/django-allauth), [`pillow`](https://pypi.org/project/Pillow/)
 
 ---
 ### Installation
