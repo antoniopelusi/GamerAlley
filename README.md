@@ -54,6 +54,16 @@ A videogames-based social network
 - Run the server with `python manage.py runserver`
 
 ---
+### Testing
+In the `GamerAlley/GamerAlley` folder
+
+Test the **profiles** app:
+`python manage.py test profiles/tests`
+
+Test the **posts** app:
+`python manage.py test posts/tests`
+
+---
 ### Login in the website (_Preloaded accounts on the database, only for testing purposes_):
 _email_ | _password_ to login in GamerAlley
 
