@@ -12,7 +12,7 @@
                         <div class="right floated meta">
                             <div class="ui grid">
                                 <div class="row">
-                                    {% ifequal request.user obj.author.user %}
+                                    {% if request.user == obj.author.user %}
                                         <a href="{% url 'posts:post-update' obj.pk %}">
                                             <button id="edit-btn" class="ui icon button darker">
                                                 <i class="edit icon"></i>
@@ -23,7 +23,7 @@
                                                 <i class="close icon"></i>
                                             </button>
                                         </a>
-                                    {% endifequal %}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
